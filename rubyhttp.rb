@@ -21,6 +21,16 @@ rescue LoadError
   puts "curb tests are not available (#{$!})"
 end
 
+begin
+  require 'rfuzz/client'
+  require 'streamclient'
+  rfuzz_available = true
+  puts "rfuzz tests are available"
+rescue LoadError
+  rfuzz_available = false
+  puts "rfuzz tests are not available (#{$!})"
+end
+
 COLUMN_WIDTH = 25
 
 #REMOTE_URL = "http://seattle.futurehosting.biz/test100.zip"
@@ -68,7 +78,6 @@ IMPLEMENTATIONS = {
   "libcurl" => {
     :available => curb_available,
     :proc => proc { |bm, test, remote_url|
-        return nil unless curb_available
         stats = Hash.new(0)
     
         tm = bm.report(test[:name]) do
@@ -90,6 +99,29 @@ IMPLEMENTATIONS = {
     
         stats
     }
+  },
+
+  "rfuzz" => {
+    :available => rfuzz_available,
+    :proc => proc { |bm, test, remote_url|
+      stats = Hash.new(0)
+      url = URI.parse(remote_url)
+    
+      tm = bm.report(test[:name]) do
+        client = StreamingHttpClient.new(url.host, url.port)
+        client.sendrecv_streaming_request("GET", url.path, {}) do |chunk|
+          stats[:bytes] += chunk.length
+          stats[:chunk_count] += 1
+          stats[:min_chunk_size] = chunk.length if stats[:min_chunk_size] == 0 || stats[:min_chunk_size] > chunk.length
+          stats[:max_chunk_size] = chunk.length if stats[:max_chunk_size] == 0 || stats[:max_chunk_size] < chunk.length
+        end
+      end
+  
+      stats[:tm] = tm
+      stats[:test] = test
+  
+      stats
+    }
   }
 }
 
@@ -100,14 +132,14 @@ impl_names = []
 impl_total_labels = []
 
 IMPLEMENTATIONS.each_pair do |key, value|
-  break unless value[:available]
+  next unless value[:available]
 
   impl_names << key
   impl_total_labels << ">all #{key}"
 end
 
-#puts "Impl names:"
-#impl_names.each {|name|  puts name}
+puts "Impl names:"
+impl_names.each {|name|  puts name}
 
 #Benchmark.benchmark(" "*20 + Benchmark::CAPTION, 20, Benchmark::FMTSTR, *impl_names) do |x|
 Benchmark.benchmark(" "*COLUMN_WIDTH + Benchmark::CAPTION, 
@@ -115,7 +147,7 @@ Benchmark.benchmark(" "*COLUMN_WIDTH + Benchmark::CAPTION,
   Benchmark::FMTSTR, 
   *impl_total_labels) do |x|
   IMPLEMENTATIONS.each_pair do |impl_name, details|
-    break unless details[:available]
+    next unless details[:available]
     times = []
 
     REMOTE_URLS.each_pair do |site_name, remote_url|
