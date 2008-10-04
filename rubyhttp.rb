@@ -158,9 +158,11 @@ end
 
 File.open(result_file, 'w') do |file|
   #Output the test results as a CSV file
-  file << "Test,KBytes Transferred,KBytes/second,Chunk Count,Mean Chunk Size,Max Chunk Size,Min Chunk Size,User Time,System Time,Total CPU Time,Clock Time\n"
+  file << "Site,Impl,Test,KBytes Transferred,KBytes/second,Chunk Count,Mean Chunk Size,Max Chunk Size,Min Chunk Size,User Time,System Time,Total CPU Time,Clock Time\n"
   
   results.each do |stats|
+    file << "#{stats[:test][:site_name]},"
+    file << "#{stats[:test][:impl_name]},"
     file << "#{stats[:test][:name]},"
     file << "#{stats[:bytes]/1024},"
     file << "#{(stats[:bytes] / 1024) / stats[:tm].real},"
