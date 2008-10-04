@@ -11,11 +11,11 @@ COLUMN_WIDTH = 25
 #REMOTE_URL = "http://wdc01.futurehosting.biz/test.zip"
 
 REMOTE_URLS = {
-  #"seattle" => "http://seattle.futurehosting.biz/test.zip",
+  "seattle" => "http://seattle.futurehosting.biz/test.zip",
   "washdc" => "http://wdc01.futurehosting.biz/test.zip",
   "dallas" => "http://manage2.futurehosting.biz/test.zip",
-  #"chicago" => "http://chicagospeedtest.futurehosting.biz/test.zip",
-  #"london" => "http://uk.futurehosting.biz/test.zip",
+  "chicago" => "http://chicagospeedtest.futurehosting.biz/test.zip",
+  "london" => "http://uk.futurehosting.biz/test.zip",
 }
 
 def run_tests

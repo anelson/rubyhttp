@@ -1,7 +1,6 @@
 require File.dirname(__FILE__) + "/../http_impl.rb"
 
 begin
-  require File.dirname(__FILE__) + '/rfuzz/pushbackiond.rb'
   require File.dirname(__FILE__) + '/rfuzz/streamclient.rb'
 
   rfuzz_available = true
