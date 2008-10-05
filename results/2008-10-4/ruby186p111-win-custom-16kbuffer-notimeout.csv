@@ -1,0 +1,6 @@
+Site,Impl,Test,KBytes Transferred,KBytes/second,Chunk Count,Mean Chunk Size,Max Chunk Size,Min Chunk Size,User Time,System Time,Total CPU Time,Clock Time
+seattle,net/http,seattle with net/http,11266,639.786474004488,1420,8124,16384,812,0.281,0.062,0.343,17.6089999675751
+chicago,net/http,chicago with net/http,11266,1704.64518917733,1597,7223,16384,116,0.203,0.063,0.266,6.60899996757507
+dallas,net/http,dallas with net/http,11266,866.615384615385,1556,7414,16384,908,0.203,0.062,0.265,13.0
+london,net/http,london with net/http,11266,516.860119993117,1365,8451,16384,908,0.25,0.078,0.328,21.7969999313354
+washdc,net/http,washdc with net/http,11266,1219.92418377071,1479,7800,16384,908,0.188,0.047,0.235,9.2350001335144
