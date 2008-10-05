@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + "/187_net_http_notimeout/http.rb"
 
 class CustomNetHttpNoTimeoutImpl < HttpImpl
   def initialize()
-    super('1.8.7 net/http with no timeout', false) #true)
+    super('1.8.7 net/http with no timeout', true)
   end
 
   protected
