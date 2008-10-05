@@ -1,15 +1,15 @@
 require File.dirname(__FILE__) + "/../http_impl.rb"
-require 'net/http'
+require File.dirname(__FILE__) + "/187_net_http_notimeout/http.rb"
 
-class NetHttpImpl < HttpImpl
+class CustomNetHttpNoTimeoutImpl < HttpImpl
   def initialize()
-    super("net/http", true)
+    super('1.8.7 net/http with no timeout', true)
   end
 
   protected
 
   def get_impl(uri, &block)
-    Net::HTTP.start(uri.host, uri.port) do |http|
+    Net::CustomHTTPNoTimeout.start(uri.host, uri.port) do |http|
       http.request_get(uri.path) do |response|
         response.read_body do |body|
           block.call body
@@ -19,5 +19,5 @@ class NetHttpImpl < HttpImpl
   end
 end
 
-NetHttpImpl.new()
+CustomNetHttpNoTimeoutImpl.new()
 

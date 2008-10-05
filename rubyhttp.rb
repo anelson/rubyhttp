@@ -3,7 +3,8 @@
 require 'benchmark'
 require 'http_impls'
 
-COLUMN_WIDTH = 25
+MIN_COLUMN_WIDTH = 25
+MAX_SITE_NAME_LENGTH = 15
 
 #REMOTE_URL = "http://seattle.futurehosting.biz/test100.zip"
 #REMOTE_URL = "http://seattle.futurehosting.biz/test.zip"
@@ -25,19 +26,25 @@ def run_tests
   impl_names = []
   impl_total_labels = []
   
+  impl_name_column_width = MIN_COLUMN_WIDTH
+
   HttpImpls::get_impls.each do |impl|
     next unless impl.available
   
     impl_names << impl.name
     impl_total_labels << ">all #{impl.name}"
+
+    impl_name_column_width = impl.name.length unless impl_name_column_width > impl.name.length
   end
   
   puts "Impl names:"
   impl_names.each {|name|  puts name}
   
+  #Pad the impl name with space for the site name before the runtime numbers
+  impl_name_column_width += MAX_SITE_NAME_LENGTH
   #Benchmark.benchmark(" "*20 + Benchmark::CAPTION, 20, Benchmark::FMTSTR, *impl_names) do |x|
-  Benchmark.benchmark(" "*COLUMN_WIDTH + Benchmark::CAPTION, 
-    COLUMN_WIDTH, 
+  Benchmark.benchmark(" "*impl_name_column_width + Benchmark::CAPTION, 
+    impl_name_column_width, 
     Benchmark::FMTSTR, 
     *impl_total_labels) do |x|
     HttpImpls::get_impls.each do |impl|
