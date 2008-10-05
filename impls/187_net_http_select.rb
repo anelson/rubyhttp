@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + "/187_net_http_select/http.rb"
 
 class CustomNetHttpSelectImpl < HttpImpl
   def initialize()
-    super('1.8.7 net/http with select()', true)
+    super('1.8.7 net/http with select()', false) #true)
   end
 
   protected
