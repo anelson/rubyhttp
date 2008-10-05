@@ -27,6 +27,7 @@
 
 require File.dirname(__FILE__) + '/protocol'
 require 'uri'
+require 'net/http'
 
 module Net   #:nodoc:
   class CustomHTTPNoTimeout < HTTP

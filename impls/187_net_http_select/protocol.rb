@@ -20,6 +20,7 @@
 
 require 'socket'
 require 'timeout'
+require 'net/protocol'
 
 module Net # :nodoc:
 
