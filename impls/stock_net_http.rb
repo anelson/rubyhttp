@@ -3,7 +3,7 @@ require 'net/http'
 
 class StockNetHttpImpl < HttpImpl
   def initialize()
-    super("stock #{RUBY_VERSION} net/http", true)
+    super('net/http', true)
   end
 
   protected

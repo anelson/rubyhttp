@@ -28,7 +28,10 @@ def run_tests
   
   impl_name_column_width = MIN_COLUMN_WIDTH
 
+  puts "HTTP Implementations:"
+
   HttpImpls::get_impls.each do |impl|
+    puts "  #{impl.name} (#{impl.available?'available':'not available'})"
     next unless impl.available
   
     impl_names << impl.name
@@ -36,9 +39,6 @@ def run_tests
 
     impl_name_column_width = impl.name.length unless impl_name_column_width > impl.name.length
   end
-  
-  puts "Impl names:"
-  impl_names.each {|name|  puts name}
   
   #Pad the impl name with space for the site name before the runtime numbers
   impl_name_column_width += MAX_SITE_NAME_LENGTH
@@ -115,7 +115,7 @@ def write_results_to_csv(results, result_file)
     
     results.each do |stats|
       file << "#{stats.test.site_name},"
-      file << "#{stats.test.impl.name},"
+      file << "#{RUBY_VERSION} #{RUBY_PLATFORM} #{stats.test.impl.name},"
       file << "#{stats.test.name},"
       file << "#{stats.bytes/1024},"
       file << "#{(stats.bytes / 1024) / stats.tm.real},"
@@ -140,16 +140,17 @@ def main(argv)
     exit(-1)
   end
   
-  result_file = nil
+  result_dir = File.dirname(__FILE__) + "/results/#{Time.new().strftime('%Y-%m-%d')}"
+  result_file = result_dir + "/ruby-#{RUBY_VERSION}-#{RUBY_PLATFORM}.csv"
+
   result_file = ARGV[0] unless ARGV.length < 1
 
   results = run_tests
   
   print_results(results)
   
-  if result_file != nil
-    write_results_to_csv(results, result_file)
-  end
+  Dir.mkdir(result_dir)
+  write_results_to_csv(results, result_file)
 end
 
 main(ARGV)

@@ -1,15 +1,15 @@
 require File.dirname(__FILE__) + "/../http_impl.rb"
-require File.dirname(__FILE__) + "/187_net_http_select/http.rb"
+require File.dirname(__FILE__) + "/net_http_notimeout/http.rb"
 
-class CustomNetHttpSelectImpl < HttpImpl
+class CustomNetHttpNoTimeoutImpl < HttpImpl
   def initialize()
-    super('1.8.7 net/http with select()', true)
+    super('net/http with 16k buf, no timeout', true)
   end
 
   protected
 
   def get_impl(uri, &block)
-    Net::CustomHTTPSelect.start(uri.host, uri.port) do |http|
+    Net::CustomHTTPNoTimeout.start(uri.host, uri.port) do |http|
       http.request_get(uri.path) do |response|
         response.read_body do |body|
           block.call body
@@ -19,5 +19,5 @@ class CustomNetHttpSelectImpl < HttpImpl
   end
 end
 
-CustomNetHttpSelectImpl.new()
+CustomNetHttpNoTimeoutImpl.new()
 

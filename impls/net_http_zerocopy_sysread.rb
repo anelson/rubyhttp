@@ -1,9 +1,9 @@
 require File.dirname(__FILE__) + "/../http_impl.rb"
-require File.dirname(__FILE__) + "/187_net_http_zerocopy_sysread/http.rb"
+require File.dirname(__FILE__) + "/net_http_zerocopy_sysread/http.rb"
 
 class CustomNetHttpZeroCopySysReadImpl < HttpImpl
   def initialize()
-    super('1.8.7 net/http with zero-copy reads, sysread()', true)
+    super('net/http with 16k buf, zero-copy reads, sysread()', true)
   end
 
   protected

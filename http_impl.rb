@@ -29,6 +29,13 @@ class HttpImpl
     stats
   end
 
+  ### Wrapper around protected get_impl for calling from testimpl.rb
+  def test_get_impl(uri, &block)
+      get_impl(uri) do |body|
+        block.call(body)
+      end
+  end
+
   private
 
   def register
