@@ -31,9 +31,13 @@ class HttpImpl
 
   ### Wrapper around protected get_impl for calling from testimpl.rb
   def test_get_impl(uri, &block)
+      chunks = 0
       get_impl(uri) do |body|
         block.call(body)
+        chunks += 1
       end
+
+      chunks
   end
 
   private

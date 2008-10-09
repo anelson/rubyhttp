@@ -18,29 +18,31 @@ TEST_URL = "http://manage2.futurehosting.biz/test.zip"
 def reference_get(uri)
     hash = start_hash
     bytes = 0
+    chunks = 0
 
     Net::HTTP.start(uri.host, uri.port) do |http|
       http.request_get(uri.path) do |response|
         response.read_body do |body|
           add_hash(hash, body)
           bytes += body.length
+          chunks += 1
         end
       end
     end
 
-    [bytes, complete_hash(hash)]
+    [bytes, chunks, complete_hash(hash)]
 end
 
 def test_get(impl, uri)
     hash = start_hash
     bytes = 0
 
-    impl.test_get_impl(uri) do |body|
+    chunks = impl.test_get_impl(uri) do |body|
       add_hash(hash, body)
       bytes += body.length
     end
 
-    [bytes, complete_hash(hash)]
+    [bytes, chunks, complete_hash(hash)]
 end
 
 class HashMismatchError < Exception
@@ -67,7 +69,7 @@ test_impl_name = ARGV[0] unless ARGV.length < 1
 impls_to_test = []
 
 HttpImpls.get_impls.each do |impl|
-    impls_to_test << impl unless (test_impl_name != nil and test_impl_name == impl.name) or !impl.available
+    impls_to_test << impl unless (test_impl_name != nil and test_impl_name != impl.name) or !impl.available
 end
 
 if impls_to_test.length == 0
@@ -82,15 +84,15 @@ test_uri = URI.parse(TEST_URL)
 
 puts "Downloading data with reference impl from #{test_uri}"
 
-reference_bytes, reference_hash = reference_get(test_uri)
+reference_bytes, reference_chunks, reference_hash = reference_get(test_uri)
 
-puts "Reference implementation returned data with #{reference_bytes} bytes, hash #{reference_hash}"
+puts "Reference implementation returned data with #{reference_bytes} bytes in #{reference_chunks} chunks, hash #{reference_hash}"
 
 impls_to_test.each do |impl|
     print "Downloading data with impl #{impl.name}..."
 
     begin
-        test_bytes, test_hash = test_get(impl, test_uri)
+        test_bytes, test_chunks, test_hash = test_get(impl, test_uri)
 
         if reference_hash != test_hash
             raise HashMismatchError.new(reference_hash, test_hash, test_bytes)
@@ -107,7 +109,7 @@ impls_to_test.each do |impl|
         next
     end
 
-    print "OK\n"
+    print "#{test_bytes} bytes in #{test_chunks} chunks, OK\n"
 end
 
 puts "Test(s) complete"
