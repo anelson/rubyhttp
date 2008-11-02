@@ -31,7 +31,13 @@ def run_tests
   puts "HTTP Implementations:"
 
   HttpImpls::get_impls.each do |impl|
-    puts "  #{impl.name} (#{impl.available?'available':'not available'})"
+    print "  #{impl.name} "
+    if (impl.available) 
+	puts "  available"
+    else
+        puts "  not available"
+    end
+
     next unless impl.available
   
     impl_names << impl.name
@@ -149,7 +155,7 @@ def main(argv)
   
   print_results(results)
   
-  Dir.mkdir(result_dir)
+  Dir.mkdir(result_dir) rescue nil
   write_results_to_csv(results, result_file)
 end
 

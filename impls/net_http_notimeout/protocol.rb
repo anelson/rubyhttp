@@ -34,7 +34,8 @@ module Net # :nodoc:
     BUFSIZE = 1024*16
 
     def rbuf_fill
-      @rbuf << @io.sysread(BUFSIZE)
+      #@rbuf << @io.sysread(BUFSIZE)
+      @rbuf << @io.readpartial(BUFSIZE)
     end
   end
 end   # module Net

@@ -4,17 +4,17 @@ require 'net/http'
 begin
   require 'right_http_connection'
 
-  right_available = true
   puts "right_http_connection tests are available"
   warn("WARNING: right_http_connection monkey-patches Net::HTTP.  Stock Net::HTTP performance results will be inaccurate")
+  right_available = true
 rescue LoadError
   right_available = false
   puts "right_http_connection tests are not available (#{$!})"
 end
 
 class RightHttpConnectiontHttpImpl < HttpImpl
-  def initialize()
-    super('right_http_connection', true)
+  def initialize(right_available)
+    super('right_http_connection', right_available)
   end
 
   protected
@@ -31,5 +31,5 @@ class RightHttpConnectiontHttpImpl < HttpImpl
   end
 end
 
-RightHttpConnectiontHttpImpl.new()
+RightHttpConnectiontHttpImpl.new(right_available)
 

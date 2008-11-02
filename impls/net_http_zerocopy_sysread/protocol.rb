@@ -94,7 +94,8 @@ module Net # :nodoc:
     protected
 
     def socket_read(buf, len)
-      @io.sysread(len, buf)
+      #@io.sysread(len, buf)
+      @io.readpartial(len, buf)
     end
   end
 end   # module Net
