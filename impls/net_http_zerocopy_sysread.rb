@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + "/net_http_zerocopy_sysread/http.rb"
 
 class CustomNetHttpZeroCopySysReadImpl < HttpImpl
   def initialize()
-    super('net/http with 16k buf, zero-copy reads, sysread()', true)
+    super(__FILE__, 'net/http with 16k buf, zero-copy reads, sysread()', true)
   end
 
   protected

@@ -1,0 +1,6 @@
+Site,Impl,Test,KBytes Transferred,KBytes/second,Chunk Count,Mean Chunk Size,Max Chunk Size,Min Chunk Size,User Time,System Time,Total CPU Time,Clock Time
+"seattle","1.8.6 i686-linux libcurl","seattle with libcurl",11266,577.019121065835,7830,1473,13140,404,0.27,0.37,0.64,19.5244829654694
+"chicago","1.8.6 i686-linux libcurl","chicago with libcurl",11266,935.341999765635,7818,1475,14600,696,0.3,0.37,0.67,12.044792175293
+"dallas","1.8.6 i686-linux libcurl","dallas with libcurl",11266,10951.5686308775,7551,1527,16384,924,0.26,0.32,0.58,1.02871108055115
+"london","1.8.6 i686-linux libcurl","london with libcurl",11266,250.101158052392,7809,1477,13140,1168,0.29,0.35,0.64,45.0457730293274
+"washdc","1.8.6 i686-linux libcurl","washdc with libcurl",11266,680.04650765181,7454,1547,16384,460,0.25,0.28,0.53,16.5665140151978

@@ -1,0 +1,6 @@
+Site,Impl,Test,KBytes Transferred,KBytes/second,Chunk Count,Mean Chunk Size,Max Chunk Size,Min Chunk Size,User Time,System Time,Total CPU Time,Clock Time
+"seattle","1.8.6 i686-linux rfuzz","seattle with rfuzz",11266,571.29014767079,705,16363,16384,2048,0.06,0.21,0.27,19.7202770709991
+"chicago","1.8.6 i686-linux rfuzz","chicago with rfuzz",11266,932.399616132498,706,16340,16384,960,0.03,0.25,0.28,12.0828020572662
+"dallas","1.8.6 i686-linux rfuzz","dallas with rfuzz",11266,10777.0026125429,705,16363,16384,2048,0.04,0.26,0.3,1.04537415504456
+"london","1.8.6 i686-linux rfuzz","london with rfuzz",11266,251.419259142976,705,16363,16384,2048,0.08,0.27,0.35,44.8096141815186
+"washdc","1.8.6 i686-linux rfuzz","washdc with rfuzz",11266,860.138078243775,705,16363,16384,2048,0.06,0.22,0.28,13.0978970527649

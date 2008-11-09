@@ -1,0 +1,6 @@
+Site,Impl,Test,KBytes Transferred,KBytes/second,Chunk Count,Mean Chunk Size,Max Chunk Size,Min Chunk Size,User Time,System Time,Total CPU Time,Clock Time
+"seattle","1.8.6 i686-linux net_http_select","seattle with net/http with 16k buf, select()",11266,572.501856713509,7502,1537,16384,768,0.72,0.37,1.09,19.6785387992859
+"chicago","1.8.6 i686-linux net_http_select","chicago with net/http with 16k buf, select()",11266,938.094829173558,7668,1504,16384,1088,0.75,0.39,1.14,12.0094468593597
+"dallas","1.8.6 i686-linux net_http_select","dallas with net/http with 16k buf, select()",11266,10781.335194525,6439,1791,16384,80,0.61,0.35,0.96,1.04495406150818
+"london","1.8.6 i686-linux net_http_select","london with net/http with 16k buf, select()",11266,250.846339062811,7567,1524,16384,1460,0.77,0.39,1.16,44.911957025528
+"washdc","1.8.6 i686-linux net_http_select","washdc with net/http with 16k buf, select()",11266,857.893439325976,7688,1500,13140,924,0.77,0.39,1.16,13.1321671009064

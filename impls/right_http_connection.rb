@@ -14,7 +14,7 @@ end
 
 class RightHttpConnectiontHttpImpl < HttpImpl
   def initialize(right_available)
-    super('right_http_connection', right_available)
+    super(__FILE__, 'right_http_connection', right_available)
   end
 
   protected

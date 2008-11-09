@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + "/net_http_zerocopy/http.rb"
 
 class CustomNetHttpZeroCopyImpl < HttpImpl
   def initialize()
-    super('net/http with 16k buf, zero-copy reads, select()',true)
+    super(__FILE__, 'net/http with 16k buf, zero-copy reads, select()',true)
   end
 
   protected

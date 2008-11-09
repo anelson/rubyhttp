@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + "/net_http_select/http.rb"
 
 class CustomNetHttpSelectImpl < HttpImpl
   def initialize()
-    super('net/http with 16k buf, select()', true)
+    super(__FILE__, 'net/http with 16k buf, select()', true)
   end
 
   protected

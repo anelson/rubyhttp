@@ -1,0 +1,6 @@
+Site,Impl,Test,KBytes Transferred,KBytes/second,Chunk Count,Mean Chunk Size,Max Chunk Size,Min Chunk Size,User Time,System Time,Total CPU Time,Clock Time
+"seattle","1.8.7 i686-linux eventmachine","seattle with eventmachine",11266,521.980900943367,1,11536384,11536384,11536384,0.15,0.2,0.35,21.5831651687622
+"chicago","1.8.7 i686-linux eventmachine","chicago with eventmachine",11266,933.053540472291,1,11536384,11536384,11536384,0.14,0.19,0.33,12.0743339061737
+"dallas","1.8.7 i686-linux eventmachine","dallas with eventmachine",11266,10678.7543616808,1,11536384,11536384,11536384,0.14,0.25,0.39,1.05499196052551
+"london","1.8.7 i686-linux eventmachine","london with eventmachine",11266,248.048478951887,1,11536384,11536384,11536384,0.15,0.17,0.32,45.4185409545898
+"washdc","1.8.7 i686-linux eventmachine","washdc with eventmachine",11266,864.084220666564,1,11536384,11536384,11536384,0.13,0.2,0.33,13.0380809307098

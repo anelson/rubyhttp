@@ -1,0 +1,6 @@
+Site,Impl,Test,KBytes Transferred,KBytes/second,Chunk Count,Mean Chunk Size,Max Chunk Size,Min Chunk Size,User Time,System Time,Total CPU Time,Clock Time
+"seattle","1.9.0 i686-linux right_http_connection","seattle with right_http_connection",11266,574.26260977982,7639,1510,16384,1136,0.42,0.51,0.93,19.6182022094727
+"washdc","1.9.0 i686-linux right_http_connection","washdc with right_http_connection",11266,868.068731572748,7715,1495,14600,884,0.43,0.53,0.96,12.9782350063324
+"dallas","1.9.0 i686-linux right_http_connection","dallas with right_http_connection",11266,9935.01525983603,6718,1717,16384,1088,0.36,0.44,0.8,1.13396906852722
+"chicago","1.9.0 i686-linux right_http_connection","chicago with right_http_connection",11266,927.648594606268,7645,1509,16384,1088,0.42,0.48,0.9,12.1446850299835
+"london","1.9.0 i686-linux right_http_connection","london with right_http_connection",11266,249.542353418434,7743,1489,16060,924,0.41,0.48,0.89,45.1466448307037

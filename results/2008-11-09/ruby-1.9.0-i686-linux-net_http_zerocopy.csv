@@ -1,0 +1,6 @@
+Site,Impl,Test,KBytes Transferred,KBytes/second,Chunk Count,Mean Chunk Size,Max Chunk Size,Min Chunk Size,User Time,System Time,Total CPU Time,Clock Time
+"seattle","1.9.0 i686-linux net_http_zerocopy","seattle with net/http with 16k buf, zero-copy reads, select()",11266,571.889868163811,7683,1501,16384,924,0.47,0.17,0.64,19.699597120285
+"washdc","1.9.0 i686-linux net_http_zerocopy","washdc with net/http with 16k buf, zero-copy reads, select()",11266,853.587541433825,7714,1495,13140,924,0.49,0.15,0.64,13.1984119415283
+"dallas","1.9.0 i686-linux net_http_zerocopy","dallas with net/http with 16k buf, zero-copy reads, select()",11266,10129.911564359,7036,1639,16384,488,0.43,0.18,0.61,1.1121518611908
+"chicago","1.9.0 i686-linux net_http_zerocopy","chicago with net/http with 16k buf, zero-copy reads, select()",11266,926.719555472985,7680,1502,16384,696,0.5,0.17,0.67,12.1568601131439
+"london","1.9.0 i686-linux net_http_zerocopy","london with net/http with 16k buf, zero-copy reads, select()",11266,249.74964593452,7551,1527,16384,1088,0.52,0.18,0.7,45.1091730594635

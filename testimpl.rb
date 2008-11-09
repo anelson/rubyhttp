@@ -68,6 +68,12 @@ test_impl_name = ARGV[0] unless ARGV.length < 1
 
 impls_to_test = []
 
+if test_impl_name != nil
+  HttpImpls.load_single_impl(test_impl_name)
+else
+  HttpImpls.load_all_impls
+end
+
 HttpImpls.get_impls.each do |impl|
     impls_to_test << impl unless (test_impl_name != nil and test_impl_name != impl.name) or !impl.available
 end

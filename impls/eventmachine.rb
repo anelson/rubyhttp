@@ -12,7 +12,7 @@ end
 
 class EventMachineHttpImpl < HttpImpl
   def initialize(eventmachine_available)
-    super("eventmachine", eventmachine_available)
+    super(__FILE__, "eventmachine", eventmachine_available)
   end
 
   protected

@@ -1,0 +1,24 @@
+Impl Names/Sites,seattle,chicago,dallas,london,washdc
+1.8.7 i686-linux net_http_notimeout,0.43,0.42,0.43,0.45,0.43
+1.8.6 i686-linux net_http_select,1.09,1.14,0.96,1.16,1.16
+1.8.6 i686-linux net_http_zerocopy,0.96,1.02,0.88,0.98,0.99
+1.9.0 i686-linux net_http_zerocopy_sysread,0.19,0.19,0.22,0.24,0.22
+1.8.7 i686-linux rfuzz,0.25,0.26,0.24,0.31,0.28
+1.8.7 i686-linux right_http_connection,1.19,1.25,0.93,1.12,1.16
+1.8.7 i686-linux net_http_zerocopy,0.63,0.61,0.54,0.67,0.63
+1.8.6 i686-linux stock_net_http,3.2,3.13,2.97,3.19,3.39
+1.8.7 i686-linux net_http_zerocopy_sysread,0.38,0.43,0.4,0.42,0.39
+1.8.6 i686-linux libcurl,0.64,0.67,0.58,0.64,0.53
+1.9.0 i686-linux net_http_notimeout,0.23,0.25,0.26,0.28,0.26
+1.8.6 i686-linux rfuzz,0.27,0.28,0.3,0.35,0.28
+1.9.0 i686-linux net_http_select,0.74,0.72,0.65,0.7,0.72
+1.9.0 i686-linux net_http_zerocopy,0.64,0.67,0.61,0.7,0.64
+1.9.0 i686-linux eventmachine,0.34,0.3,0.31,0.33,0.3
+1.9.0 i686-linux stock_net_http,0.95,0.91,0.77,0.93,0.96
+1.8.7 i686-linux eventmachine,0.35,0.33,0.39,0.32,0.33
+1.8.7 i686-linux net_http_select,0.76,0.72,0.67,0.77,0.74
+1.8.6 i686-linux net_http_zerocopy_sysread,0.8,0.78,0.63,0.8,0.76
+1.8.7 i686-linux libcurl,0.28,0.25,0.26,0.3,0.27
+1.8.7 i686-linux stock_net_http,1.39,1.35,0.98,1.48,1.36
+1.9.0 i686-linux right_http_connection,0.93,0.9,0.8,0.89,0.96
+1.8.6 i686-linux net_http_notimeout,0.85,0.8,0.7,0.83,0.88

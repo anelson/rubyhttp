@@ -11,7 +11,7 @@ end
 
 class CurlHttpImpl < HttpImpl
   def initialize(curb_available)
-    super("libcurl", curb_available)
+    super(__FILE__, "libcurl", curb_available)
   end
 
   protected

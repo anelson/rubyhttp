@@ -12,7 +12,7 @@ end
 
 class RfuzzHttpImpl < HttpImpl
   def initialize(rfuzz_available)
-    super("rfuzz", rfuzz_available)
+    super(__FILE__, "rfuzz", rfuzz_available)
   end
 
   protected

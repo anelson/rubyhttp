@@ -1,0 +1,6 @@
+Site,Impl,Test,KBytes Transferred,KBytes/second,Chunk Count,Mean Chunk Size,Max Chunk Size,Min Chunk Size,User Time,System Time,Total CPU Time,Clock Time
+"seattle","1.8.7 i686-linux stock_net_http","seattle with net/http",11266,577.454329272169,7258,1589,29200,1460,1.13,0.26,1.39,19.5097680091858
+"chicago","1.8.7 i686-linux stock_net_http","chicago with net/http",11266,929.123379695486,7270,1586,27740,696,1.12,0.23,1.35,12.1254079341888
+"dallas","1.8.7 i686-linux stock_net_http","dallas with net/http",11266,10508.9541367486,4886,2361,65536,1216,0.77,0.21,0.98,1.07203817367554
+"london","1.8.7 i686-linux stock_net_http","london with net/http",11266,248.517762114197,7449,1548,30660,924,1.21,0.27,1.48,45.3327758312225
+"washdc","1.8.7 i686-linux stock_net_http","washdc with net/http",11266,858.476632919101,7397,1559,16060,276,1.14,0.22,1.36,13.1232459545135

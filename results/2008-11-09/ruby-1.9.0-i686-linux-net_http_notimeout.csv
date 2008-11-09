@@ -1,0 +1,6 @@
+Site,Impl,Test,KBytes Transferred,KBytes/second,Chunk Count,Mean Chunk Size,Max Chunk Size,Min Chunk Size,User Time,System Time,Total CPU Time,Clock Time
+"seattle","1.9.0 i686-linux net_http_notimeout","seattle with net/http with 16k buf, no timeout",11266,575.311675533812,7755,1487,16384,924,0.12,0.11,0.23,19.5824289321899
+"washdc","1.9.0 i686-linux net_http_notimeout","washdc with net/http with 16k buf, no timeout",11266,858.572359346972,7815,1476,7300,924,0.15,0.11,0.26,13.1217827796936
+"dallas","1.9.0 i686-linux net_http_notimeout","dallas with net/http with 16k buf, no timeout",11266,10344.1409427473,7442,1550,16384,1088,0.14,0.12,0.26,1.08911895751953
+"chicago","1.9.0 i686-linux net_http_notimeout","chicago with net/http with 16k buf, no timeout",11266,927.636593614814,7815,1476,11680,1088,0.15,0.1,0.25,12.1448421478271
+"london","1.9.0 i686-linux net_http_notimeout","london with net/http with 16k buf, no timeout",11266,251.962498695211,7802,1478,7300,924,0.15,0.13,0.28,44.7130031585693

@@ -3,10 +3,12 @@ require 'ostruct'
 ### Base class for HTTP implementations
 class HttpImpl
   attr_reader :name
+  attr_reader :description
   attr_reader :available
 
-  def initialize(name, available)
-    @name = name
+  def initialize(filename, description, available)
+    @name = File.basename(filename, ".rb")
+    @description = description
     @available = available
 
     register()
